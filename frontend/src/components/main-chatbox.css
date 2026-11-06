@@ -314,3 +314,134 @@
     animation: none;
   }
 }
+
+/* Assistant message bubble */
+.message--assistant {
+  align-self: flex-start;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px 18px 18px 6px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1a1a1e;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  animation: message-in 0.25s ease;
+}
+
+/* User message bubble (explicit, preserves existing design) */
+.message--user {
+  align-self: flex-end;
+  border-radius: 18px 18px 6px 18px;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  max-width: 80%;
+  align-self: flex-start;
+  animation: message-in 0.25s ease;
+}
+
+.typing-text {
+  font-size: 0.95rem;
+  color: #6b6b70;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9a9aa2;
+  animation: typing-dot 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-dot {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Error banner */
+.error-banner {
+  max-width: 760px;
+  margin: 0 auto 8px;
+  padding: 10px 16px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #991b1b;
+  font-size: 0.9rem;
+  animation: message-in 0.25s ease;
+}
+
+.error-banner p {
+  margin: 0 0 8px;
+}
+
+.error-banner-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.error-banner-actions button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.error-banner-actions button:first-child {
+  background: #991b1b;
+  color: #ffffff;
+}
+
+.error-banner-actions button:first-child:hover {
+  background: #7f1d1d;
+}
+
+.error-banner-actions button:last-child {
+  background: transparent;
+  color: #991b1b;
+  border-color: #991b1b;
+}
+
+.error-banner-actions button:last-child:hover {
+  background: #fecaca;
+}
+
+/* Mobile adjustments for error banner */
+@media (max-width: 640px) {
+  .error-banner {
+    margin: 0 4px 8px;
+  }
+}
