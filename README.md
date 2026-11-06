@@ -1,6 +1,33 @@
-# React + TypeScript + Vite
+# AboutYou AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend and backend for AboutYou AI, an AI-powered personal portfolio chatbot.
+
+## Repository Structure
+
+- `frontend/` — React 19 + TypeScript + Vite frontend application
+- `backend/` — Backend service (to be developed independently)
+
+See the `frontend/README.md` (inherited from the Vite template) for frontend development instructions.
+
+## Frontend Development
+
+```bash
+cd frontend
+npm.cmd install
+npm.cmd run dev
+npm.cmd run lint
+npm.cmd run build
+```
+
+## Backend Development
+
+Backend technology, framework, and architecture will be decided by the backend developer. See `backend/README.md` for details.
+
+## Collaboration
+
+Frontend and backend are developed independently and integrated through this shared GitHub repository. API contracts will be defined jointly.
+
+---
 
 Currently, two official plugins are available:
 
