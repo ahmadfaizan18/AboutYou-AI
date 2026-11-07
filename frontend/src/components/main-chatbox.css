@@ -445,3 +445,34 @@
     margin: 0 4px 8px;
   }
 }
+
+/* Add My Info button - scoped to welcome screen */
+.btn-add-info {
+  margin-top: 16px;
+  padding: 10px 20px;
+  border: 1px solid #1a1a1e;
+  background: transparent;
+  color: #1a1a1e;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-add-info:hover {
+  background: #1a1a1e;
+  color: #ffffff;
+}
+
+.btn-add-info:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 640px) {
+  .btn-add-info {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
