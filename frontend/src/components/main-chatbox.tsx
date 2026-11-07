@@ -7,6 +7,10 @@ import MessageList from './MessageList';
 import TypingIndicator from './TypingIndicator';
 import ErrorMessage from './ErrorMessage';
 
+interface MyChatBoxProps {
+  onOpenDashboard: () => void;
+}
+
 let nextId = 0;
 
 function createMessage(content: string, role: MessageRole): ChatMessage {
@@ -19,7 +23,7 @@ function createMessage(content: string, role: MessageRole): ChatMessage {
   };
 }
 
-function MyChatBox() {
+function MyChatBox({ onOpenDashboard }: MyChatBoxProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isAssistantTyping, setIsAssistantTyping] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -82,6 +86,13 @@ function MyChatBox() {
         <div className="welcome">
           <h1>Welcome to AboutYou AI</h1>
           <p>Your friendly AI assistant, ready to help.</p>
+          <button
+            type="button"
+            className="btn-add-info"
+            onClick={onOpenDashboard}
+          >
+            Add My Info
+          </button>
         </div>
       )}
 
@@ -108,7 +119,11 @@ function MyChatBox() {
   );
 }
 
-export default function MainChatBox() {
+interface MainChatBoxProps {
+  onOpenDashboard: () => void;
+}
+
+export default function MainChatBox({ onOpenDashboard }: MainChatBoxProps) {
   return (
     <>
       <div className="page-background" aria-hidden="true">
@@ -119,7 +134,7 @@ export default function MainChatBox() {
         <div className="blob blob-pink-left" />
         <div className="blob blob-pink-right" />
       </div>
-      <MyChatBox />
+      <MyChatBox onOpenDashboard={onOpenDashboard} />
     </>
   );
 }
